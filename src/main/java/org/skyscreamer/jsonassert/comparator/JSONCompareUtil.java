@@ -11,7 +11,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-
 package org.skyscreamer.jsonassert.comparator;
 
 import java.util.ArrayList;
@@ -23,7 +22,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -31,6 +29,7 @@ import org.json.JSONObject;
  * Utility class that contains Json manipulation methods.
  */
 public final class JSONCompareUtil {
+
     private static Integer INTEGER_ONE = new Integer(1);
 
     private JSONCompareUtil() {
@@ -45,13 +44,7 @@ public final class JSONCompareUtil {
      * @return the map of {@link JSONObject}s from {@code array}
      */
     public static Map<Object, JSONObject> arrayOfJsonObjectToMap(JSONArray array, String uniqueKey) {
-        Map<Object, JSONObject> valueMap = new HashMap<Object, JSONObject>();
-        for (int i = 0; i < array.length(); ++i) {
-            JSONObject jsonObject = (JSONObject) array.get(i);
-            Object id = jsonObject.get(uniqueKey);
-            valueMap.put(id, jsonObject);
-        }
-        return valueMap;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -61,13 +54,7 @@ public final class JSONCompareUtil {
      * @return the unique key if there's any, otherwise null
      */
     public static String findUniqueKey(JSONArray expected) {
-        // Find a unique key for the object (id, name, whatever)
-        JSONObject o = (JSONObject) expected.get(0); // There's at least one at this point
-        for (String candidate : getKeys(o)) {
-            if (isUsableAsUniqueKey(candidate, expected)) return candidate;
-        }
-        // No usable unique key :-(
-        return null;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -85,26 +72,7 @@ public final class JSONCompareUtil {
      * @return true if the candidate can work as a unique id across array
      */
     public static boolean isUsableAsUniqueKey(String candidate, JSONArray array) {
-        Set<Object> seenValues = new HashSet<Object>();
-        for (int i = 0; i < array.length(); i++) {
-            Object item = array.get(i);
-            if (item instanceof JSONObject) {
-                JSONObject o = (JSONObject) item;
-                if (o.has(candidate)) {
-                    Object value = o.get(candidate);
-                    if (isSimpleValue(value) && !seenValues.contains(value)) {
-                        seenValues.add(value);
-                    } else {
-                        return false;
-                    }
-                } else {
-                    return false;
-                }
-            } else {
-                return false;
-            }
-        }
-        return true;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -114,11 +82,7 @@ public final class JSONCompareUtil {
      * @return the list of objects from the {@code expected} array
      */
     public static List<Object> jsonArrayToList(JSONArray expected) {
-        List<Object> jsonObjects = new ArrayList<Object>(expected.length());
-        for (int i = 0; i < expected.length(); ++i) {
-            jsonObjects.add(getObjectOrNull(expected, i));
-        }
-        return jsonObjects;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -129,7 +93,7 @@ public final class JSONCompareUtil {
      * @return value at the given index position
      */
     public static Object getObjectOrNull(JSONArray jsonArray, int index) {
-        return jsonArray.isNull(index) ? null : jsonArray.get(index);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -140,12 +104,7 @@ public final class JSONCompareUtil {
      * @see #isSimpleValue(Object)
      */
     public static boolean allSimpleValues(JSONArray array) {
-        for (int i = 0; i < array.length(); ++i) {
-            if (!array.isNull(i) && !isSimpleValue(array.get(i))) {
-                return false;
-            }
-        }
-        return true;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -155,7 +114,7 @@ public final class JSONCompareUtil {
      * @return true if {@code o} is a simple value
      */
     public static boolean isSimpleValue(Object o) {
-        return !(o instanceof JSONObject) && !(o instanceof JSONArray);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -165,12 +124,7 @@ public final class JSONCompareUtil {
      * @return true if all the elements in the given array are JSONObjects
      */
     public static boolean allJSONObjects(JSONArray array) {
-        for (int i = 0; i < array.length(); ++i) {
-            if (!(array.get(i) instanceof JSONObject)) {
-                return false;
-            }
-        }
-        return true;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -180,12 +134,7 @@ public final class JSONCompareUtil {
      * @return true if all the elements in the given array are JSONArrays
      */
     public static boolean allJSONArrays(JSONArray array) {
-        for (int i = 0; i < array.length(); ++i) {
-            if (!(array.get(i) instanceof JSONArray)) {
-                return false;
-            }
-        }
-        return true;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -195,20 +144,15 @@ public final class JSONCompareUtil {
      * @return the set of keys
      */
     public static Set<String> getKeys(JSONObject jsonObject) {
-        Set<String> keys = new TreeSet<String>();
-        Iterator<?> iter = jsonObject.keys();
-        while (iter.hasNext()) {
-            keys.add((String) iter.next());
-        }
-        return keys;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static String qualify(String prefix, String key) {
-        return "".equals(prefix) ? key : prefix + "." + key;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static String formatUniqueKey(String key, String uniqueKey, Object value) {
-        return key + "[" + uniqueKey + "=" + value + "]";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -219,15 +163,6 @@ public final class JSONCompareUtil {
      * @return the cardinality map
      */
     public static <T> Map<T, Integer> getCardinalityMap(final Collection<T> coll) {
-        Map count = new HashMap<T, Integer>();
-        for (T item : coll) {
-            Integer c = (Integer) (count.get(item));
-            if (c == null) {
-                count.put(item, INTEGER_ONE);
-            } else {
-                count.put(item, new Integer(c.intValue() + 1));
-            }
-        }
-        return count;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -11,68 +11,66 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-
 package org.skyscreamer.jsonassert;
 
 /**
  * Exception that may be thrown by ValueMatcher subclasses to provide more detail on why matches method failed.
- * 
- * @author Duncan Mackinder
  *
+ * @author Duncan Mackinder
  */
 public class ValueMatcherException extends RuntimeException {
-	private static final long serialVersionUID = 1L;
 
-	private final String expected;
-	
-	private final String actual;
-	
-	/**
-	 * Create new ValueMatcherException
-	 * 
-	 * @param message
-	 *            description of exception
-	 * @param expected
-	 *            value expected by ValueMatcher
-	 * @param actual
-	 *            value being tested by ValueMatcher
-	 */
-	public ValueMatcherException(String message, String expected, String actual) {
-		super(message);
-		this.expected = expected;
-		this.actual = actual;
-	}
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * Create new ValueMatcherException
-	 * 
-	 * @param message
-	 *            description of exception
-	 * @param cause
-	 *            cause of ValueMatcherException
-	 * @param expected
-	 *            value expected by ValueMatcher
-	 * @param actual
-	 *            value being tested by ValueMatcher
-	 */
-	public ValueMatcherException(String message, Throwable cause, String expected, String actual) {
-		super(message, cause);
-		this.expected = expected;
-		this.actual = actual;
-	}
+    private final String expected;
 
-	/**
-	 * @return the expected value
-	 */
-	public String getExpected() {
-		return expected;
-	}
+    private final String actual;
 
-	/**
-	 * @return the actual value
-	 */
-	public String getActual() {
-		return actual;
-	}
+    /**
+     * Create new ValueMatcherException
+     *
+     * @param message
+     *            description of exception
+     * @param expected
+     *            value expected by ValueMatcher
+     * @param actual
+     *            value being tested by ValueMatcher
+     */
+    public ValueMatcherException(String message, String expected, String actual) {
+        super(message);
+        this.expected = expected;
+        this.actual = actual;
+    }
 
+    /**
+     * Create new ValueMatcherException
+     *
+     * @param message
+     *            description of exception
+     * @param cause
+     *            cause of ValueMatcherException
+     * @param expected
+     *            value expected by ValueMatcher
+     * @param actual
+     *            value being tested by ValueMatcher
+     */
+    public ValueMatcherException(String message, Throwable cause, String expected, String actual) {
+        super(message, cause);
+        this.expected = expected;
+        this.actual = actual;
+    }
+
+    /**
+     * @return the expected value
+     */
+    public String getExpected() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    /**
+     * @return the actual value
+     */
+    public String getActual() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }

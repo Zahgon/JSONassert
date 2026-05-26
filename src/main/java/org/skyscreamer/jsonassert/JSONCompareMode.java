@@ -11,7 +11,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-
 package org.skyscreamer.jsonassert;
 
 /**
@@ -46,9 +45,9 @@ package org.skyscreamer.jsonassert;
  * <p>Then the following will fail strict ordering, but will otherwise pass:</p>
  *
  * <code>{id:1,friends:[{id:<b>3</b>},{id:<b>2</b>}]}</code>
- *
  */
 public enum JSONCompareMode {
+
     /**
      * Strict checking.  Not extensible, and strict array ordering.
      */
@@ -67,6 +66,7 @@ public enum JSONCompareMode {
     STRICT_ORDER(true, true);
 
     private final boolean _extensible;
+
     private final boolean _strictOrder;
 
     JSONCompareMode(boolean extensible, boolean strictOrder) {
@@ -79,7 +79,7 @@ public enum JSONCompareMode {
      * @return True if results can be extended from what's expected, otherwise false.
      */
     public boolean isExtensible() {
-        return _extensible;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -87,34 +87,26 @@ public enum JSONCompareMode {
      * @return True if results require strict array ordering, otherwise false.
      */
     public boolean hasStrictOrder() {
-        return _strictOrder;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Get the equivalent {@code JSONCompareMode} with or without strict ordering.
-     * 
+     *
      * @param strictOrdering if true, requires strict ordering of array elements
      * @return the equivalent {@code JSONCompareMode}
      */
     public JSONCompareMode withStrictOrdering(boolean strictOrdering) {
-        if (strictOrdering) {
-            return isExtensible() ? STRICT_ORDER : STRICT;
-        } else {
-            return isExtensible() ? LENIENT : NON_EXTENSIBLE;
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Get the equivalent {@code JSONCompareMode} with or without extensibility.
-     * 
+     *
      * @param extensible if true, allows keys in actual that don't appear in expected
      * @return the equivalent {@code JSONCompareMode}
      */
     public JSONCompareMode withExtensible(boolean extensible) {
-        if (extensible) {
-            return hasStrictOrder() ? STRICT_ORDER : LENIENT;
-        } else {
-            return hasStrictOrder() ? STRICT : NON_EXTENSIBLE;
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

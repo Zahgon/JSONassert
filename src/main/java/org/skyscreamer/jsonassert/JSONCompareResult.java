@@ -11,13 +11,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-
 package org.skyscreamer.jsonassert;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -25,13 +23,21 @@ import org.json.JSONObject;
  * Bean for holding results from JSONCompare.
  */
 public class JSONCompareResult {
+
     private boolean _success;
+
     private StringBuilder _message;
+
     private String _field;
+
     private Object _expected;
+
     private Object _actual;
+
     private final List<FieldComparisonFailure> _fieldFailures = new ArrayList<FieldComparisonFailure>();
+
     private final List<FieldComparisonFailure> _fieldMissing = new ArrayList<FieldComparisonFailure>();
+
     private final List<FieldComparisonFailure> _fieldUnexpected = new ArrayList<FieldComparisonFailure>();
 
     /**
@@ -51,7 +57,7 @@ public class JSONCompareResult {
      * @return True if it passed
      */
     public boolean passed() {
-        return _success;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -59,7 +65,7 @@ public class JSONCompareResult {
      * @return True if it failed
      */
     public boolean failed() {
-        return !_success;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -67,7 +73,7 @@ public class JSONCompareResult {
      * @return String explaining why if the comparison failed
      */
     public String getMessage() {
-        return _message.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -75,28 +81,28 @@ public class JSONCompareResult {
      * @return list of comparsion failures
      */
     public List<FieldComparisonFailure> getFieldFailures() {
-        return Collections.unmodifiableList(_fieldFailures);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Get the list of missed on field comparisons
      * @return list of comparsion failures
      */
     public List<FieldComparisonFailure> getFieldMissing() {
-        return Collections.unmodifiableList(_fieldMissing);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Get the list of failures on field comparisons
      * @return list of comparsion failures
      */
     public List<FieldComparisonFailure> getFieldUnexpected() {
-        return Collections.unmodifiableList(_fieldUnexpected);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Actual field value
-     * 
+     *
      * @return a {@code JSONObject}, {@code JSONArray} or other {@code Object}
      *         instance, or {@code null} if the comparison did not fail on a
      *         particular field
@@ -106,10 +112,10 @@ public class JSONCompareResult {
     public Object getActual() {
         return _actual;
     }
-    
+
     /**
      * Expected field value
-     * 
+     *
      * @return a {@code JSONObject}, {@code JSONArray} or other {@code Object}
      *         instance, or {@code null} if the comparison did not fail on a
      *         particular field
@@ -119,34 +125,34 @@ public class JSONCompareResult {
     public Object getExpected() {
         return _expected;
     }
-    
+
     /**
      * Check if comparison failed on any particular fields
      * @return true if there are field failures
      */
     public boolean isFailureOnField() {
-        return !_fieldFailures.isEmpty();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Check if comparison failed with missing on any particular fields
      * @return true if an expected field is missing
      */
     public boolean isMissingOnField() {
-        return !_fieldMissing.isEmpty();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Check if comparison failed with unexpected on any particular fields
      * @return true if an unexpected field is in the result
      */
     public boolean isUnexpectedOnField() {
-        return !_fieldUnexpected.isEmpty();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Dot-separated path the the field that failed comparison
-     * 
+     *
      * @return a {@code String} instance, or {@code null} if the comparison did
      *         not fail on a particular field
      * @deprecated Superseded by {@link #getFieldFailures()}
@@ -155,14 +161,9 @@ public class JSONCompareResult {
     public String getField() {
         return _field;
     }
-    
+
     public void fail(String message) {
-        _success = false;
-        if (_message.length() == 0) {
-            _message.append(message);
-        } else {
-            _message.append(" ; ").append(message);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -173,12 +174,7 @@ public class JSONCompareResult {
      * @return result of comparision
      */
     public JSONCompareResult fail(String field, Object expected, Object actual) {
-        _fieldFailures.add(new FieldComparisonFailure(field, expected, actual));
-        this._field = field;
-        this._expected = expected;
-        this._actual = actual;
-        fail(formatFailureMessage(field, expected, actual));
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -188,17 +184,11 @@ public class JSONCompareResult {
      * @return result of comparision
      */
     public JSONCompareResult fail(String field, ValueMatcherException exception) {
-    	fail(field + ": " + exception.getMessage(), exception.getExpected(), exception.getActual());
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String formatFailureMessage(String field, Object expected, Object actual) {
-        return field
-                + "\nExpected: "
-                + describe(expected)
-                + "\n     got: "
-                + describe(actual)
-                + "\n";
+        return field + "\nExpected: " + describe(expected) + "\n     got: " + describe(actual) + "\n";
     }
 
     /**
@@ -208,16 +198,11 @@ public class JSONCompareResult {
      * @return result of comparison
      */
     public JSONCompareResult missing(String field, Object expected) {
-    	_fieldMissing.add(new FieldComparisonFailure(field, expected, null));
-        fail(formatMissing(field, expected));
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String formatMissing(String field, Object expected) {
-        return field
-                + "\nExpected: "
-                + describe(expected)
-                + "\n     but none found\n";
+        return field + "\nExpected: " + describe(expected) + "\n     but none found\n";
     }
 
     /**
@@ -227,16 +212,11 @@ public class JSONCompareResult {
      * @return result of comparison
      */
     public JSONCompareResult unexpected(String field, Object actual) {
-    	_fieldUnexpected.add(new FieldComparisonFailure(field, null, actual));
-        fail(formatUnexpected(field, actual));
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String formatUnexpected(String field, Object actual) {
-        return field
-                + "\nUnexpected: "
-                + describe(actual)
-                + "\n";
+        return field + "\nUnexpected: " + describe(actual) + "\n";
     }
 
     private static String describe(Object value) {
@@ -251,6 +231,6 @@ public class JSONCompareResult {
 
     @Override
     public String toString() {
-        return _message.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -11,14 +11,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-
 package org.skyscreamer.jsonassert.comparator;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.skyscreamer.jsonassert.JSONCompareResult;
-
 import static org.skyscreamer.jsonassert.comparator.JSONCompareUtil.allJSONObjects;
 import static org.skyscreamer.jsonassert.comparator.JSONCompareUtil.allSimpleValues;
 
@@ -36,65 +34,24 @@ public class DefaultComparator extends AbstractComparator {
 
     @Override
     public void compareJSON(String prefix, JSONObject expected, JSONObject actual, JSONCompareResult result) {
-        // Check that actual contains all the expected values
-        checkJsonObjectKeysExpectedInActual(prefix, expected, actual, result);
-
-        // If strict, check for vice-versa
-        if (!mode.isExtensible()) {
-            checkJsonObjectKeysActualInExpected(prefix, expected, actual, result);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void compareValues(String prefix, Object expectedValue, Object actualValue, JSONCompareResult result) {
-        if (expectedValue == actualValue) {
-            return;
-        }
-        if (expectedValue == null || actualValue == null) {
-            result.fail(prefix, expectedValue, actualValue);
-        } else if (areNumbers(expectedValue, actualValue)) {
-            if (areNotSameDoubles(expectedValue, actualValue)) {
-                result.fail(prefix, expectedValue, actualValue);
-            }
-        } else if (expectedValue.getClass().isAssignableFrom(actualValue.getClass())) {
-            if (expectedValue instanceof JSONArray) {
-                compareJSONArray(prefix, (JSONArray) expectedValue, (JSONArray) actualValue, result);
-            } else if (expectedValue instanceof JSONObject) {
-                compareJSON(prefix, (JSONObject) expectedValue, (JSONObject) actualValue, result);
-            } else if (!expectedValue.equals(actualValue)) {
-                result.fail(prefix, expectedValue, actualValue);
-            }
-        } else {
-            result.fail(prefix, expectedValue, actualValue);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void compareJSONArray(String prefix, JSONArray expected, JSONArray actual, JSONCompareResult result) {
-        if (expected.length() != actual.length()) {
-            result.fail(prefix + "[]: Expected " + expected.length() + " values but got " + actual.length());
-            return;
-        } else if (expected.length() == 0) {
-            return; // Nothing to compare
-        }
-
-        if (mode.hasStrictOrder()) {
-            compareJSONArrayWithStrictOrder(prefix, expected, actual, result);
-        } else if (allSimpleValues(expected)) {
-            compareJSONArrayOfSimpleValues(prefix, expected, actual, result);
-        } else if (allJSONObjects(expected)) {
-            compareJSONArrayOfJsonObjects(prefix, expected, actual, result);
-        } else {
-            // An expensive last resort
-            recursivelyCompareJSONArray(prefix, expected, actual, result);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     protected boolean areNumbers(Object expectedValue, Object actualValue) {
-        return expectedValue instanceof Number && actualValue instanceof Number;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     protected boolean areNotSameDoubles(Object expectedValue, Object actualValue) {
-        return ((Number) expectedValue).doubleValue() != ((Number) actualValue).doubleValue();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

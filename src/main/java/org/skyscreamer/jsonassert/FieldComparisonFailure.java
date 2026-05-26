@@ -11,15 +11,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-
 package org.skyscreamer.jsonassert;
 
 /**
  * Models a failure when comparing two fields.
  */
 public class FieldComparisonFailure {
+
     private final String _field;
+
     private final Object _expected;
+
     private final Object _actual;
 
     public FieldComparisonFailure(String field, Object expected, Object actual) {
@@ -29,14 +31,14 @@ public class FieldComparisonFailure {
     }
 
     public String getField() {
-        return _field;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Object getExpected() {
-        return _expected;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Object getActual() {
-        return _actual;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -11,7 +11,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-
 package org.skyscreamer.jsonassert;
 
 import org.json.JSONArray;
@@ -46,10 +45,11 @@ import org.skyscreamer.jsonassert.comparator.JSONComparator;
  * <p>You do not have to worry about encountering a false positive or false negative in these two edge cases.
  * <i>JSONassert</i> will identify the conditions and throw a descriptive {@link IllegalArgumentException}.  These
  * cases will be fixed in future versions.</p>
- *
  */
 public class JSONAssert {
-    private JSONAssert() {}
+
+    private JSONAssert() {
+    }
 
     /**
      * Asserts that the JSONObject provided matches the expected string.  If it isn't it throws an
@@ -60,9 +60,9 @@ public class JSONAssert {
      * @param strict Enables strict checking
      */
     public static void assertEquals(String expectedStr, JSONObject actual, boolean strict) {
-        assertEquals(expectedStr, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONObject provided matches the expected string.  If it isn't it throws an
      * {@link AssertionError}.
@@ -73,36 +73,36 @@ public class JSONAssert {
      * @param strict Enables strict checking
      */
     public static void assertEquals(String message, String expectedStr, JSONObject actual, boolean strict) {
-        assertEquals(message, expectedStr, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Asserts that the JSONObject provided does not match the expected string.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @see #assertEquals(String, JSONObject, boolean)
-     * 
+     *
      * @param expectedStr Expected JSON string
      * @param actual JSONObject to compare
      * @param strict Enables strict checking
      */
     public static void assertNotEquals(String expectedStr, JSONObject actual, boolean strict) {
-        assertNotEquals(expectedStr, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONObject provided does not match the expected string.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @see #assertEquals(String, JSONObject, boolean)
-     * 
+     *
      * @param message Error message to be displayed in case of assertion failure
      * @param expectedStr Expected JSON string
      * @param actual JSONObject to compare
      * @param strict Enables strict checking
      */
     public static void assertNotEquals(String message, String expectedStr, JSONObject actual, boolean strict) {
-        assertNotEquals(message, expectedStr, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -114,9 +114,9 @@ public class JSONAssert {
      * @param compareMode Specifies which comparison mode to use
      */
     public static void assertEquals(String expectedStr, JSONObject actual, JSONCompareMode compareMode) {
-        assertEquals("", expectedStr, actual, compareMode);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONObject provided matches the expected string.  If it isn't it throws an
      * {@link AssertionError}.
@@ -126,51 +126,37 @@ public class JSONAssert {
      * @param actual JSONObject to compare
      * @param compareMode Specifies which comparison mode to use
      */
-    public static void assertEquals(String message, String expectedStr, JSONObject actual, JSONCompareMode compareMode)
-    {
-        Object expected = JSONParser.parseJSON(expectedStr);
-        if (expected instanceof JSONObject) {
-            assertEquals(message, (JSONObject)expected, actual, compareMode);
-        }
-        else {
-            throw new AssertionError("Expecting a JSON array, but passing in a JSON object");
-        }
+    public static void assertEquals(String message, String expectedStr, JSONObject actual, JSONCompareMode compareMode) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Asserts that the JSONObject provided does not match the expected string.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @see #assertEquals(String, JSONObject, JSONCompareMode)
-     * 
+     *
      * @param expectedStr Expected JSON string
      * @param actual JSONObject to compare
      * @param compareMode Specifies which comparison mode to use
      */
     public static void assertNotEquals(String expectedStr, JSONObject actual, JSONCompareMode compareMode) {
-        assertNotEquals("", expectedStr, actual, compareMode);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONObject provided does not match the expected string.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @see #assertEquals(String, JSONObject, JSONCompareMode)
-     * 
+     *
      * @param message Error message to be displayed in case of assertion failure
      * @param expectedStr Expected JSON string
      * @param actual JSONObject to compare
      * @param compareMode Specifies which comparison mode to use
      */
-    public static void assertNotEquals(String message, String expectedStr, JSONObject actual,
-                                       JSONCompareMode compareMode) {
-        Object expected = JSONParser.parseJSON(expectedStr);
-        if (expected instanceof JSONObject) {
-            assertNotEquals(message, (JSONObject) expected, actual, compareMode);
-        }
-        else {
-            throw new AssertionError("Expecting a JSON array, but passing in a JSON object");
-        }
+    public static void assertNotEquals(String message, String expectedStr, JSONObject actual, JSONCompareMode compareMode) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -182,9 +168,9 @@ public class JSONAssert {
      * @param strict Enables strict checking
      */
     public static void assertEquals(String expectedStr, JSONArray actual, boolean strict) {
-        assertEquals(expectedStr, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONArray provided matches the expected string.  If it isn't it throws an
      * {@link AssertionError}.
@@ -195,32 +181,32 @@ public class JSONAssert {
      * @param strict Enables strict checking
      */
     public static void assertEquals(String message, String expectedStr, JSONArray actual, boolean strict) {
-        assertEquals(message, expectedStr, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Asserts that the JSONArray provided does not match the expected string.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param expectedStr Expected JSON string
      * @param actual JSONArray to compare
      * @param strict Enables strict checking
      */
     public static void assertNotEquals(String expectedStr, JSONArray actual, boolean strict) {
-        assertNotEquals(expectedStr, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONArray provided does not match the expected string.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param message Error message to be displayed in case of assertion failure
      * @param expectedStr Expected JSON string
      * @param actual JSONArray to compare
      * @param strict Enables strict checking
      */
     public static void assertNotEquals(String message, String expectedStr, JSONArray actual, boolean strict) {
-        assertNotEquals(message, expectedStr, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -232,9 +218,9 @@ public class JSONAssert {
      * @param compareMode Specifies which comparison mode to use
      */
     public static void assertEquals(String expectedStr, JSONArray actual, JSONCompareMode compareMode) {
-        assertEquals("", expectedStr, actual, compareMode);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONArray provided matches the expected string.  If it isn't it throws an
      * {@link AssertionError}.
@@ -245,51 +231,32 @@ public class JSONAssert {
      * @param compareMode Specifies which comparison mode to use
      */
     public static void assertEquals(String message, String expectedStr, JSONArray actual, JSONCompareMode compareMode) {
-        Object expected = JSONParser.parseJSON(expectedStr);
-        if (expected instanceof JSONArray) {
-            assertEquals(message, (JSONArray) expected, actual, compareMode);
-        }
-        else {
-            throw new AssertionError("Expecting a JSON object, but passing in a JSON array");
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Asserts that the JSONArray provided does not match the expected string.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param expectedStr Expected JSON string
      * @param actual JSONArray to compare
      * @param compareMode Specifies which comparison mode to use
      */
     public static void assertNotEquals(String expectedStr, JSONArray actual, JSONCompareMode compareMode) {
-        Object expected = JSONParser.parseJSON(expectedStr);
-        if (expected instanceof JSONArray) {
-            assertNotEquals((JSONArray) expected, actual, compareMode);
-        }
-        else {
-            throw new AssertionError("Expecting a JSON object, but passing in a JSON array");
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONArray provided does not match the expected string.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param message Error message to be displayed in case of assertion failure
      * @param expectedStr Expected JSON string
      * @param actual JSONArray to compare
      * @param compareMode Specifies which comparison mode to use
      */
-    public static void assertNotEquals(String message, String expectedStr, JSONArray actual,
-                                       JSONCompareMode compareMode) {
-        Object expected = JSONParser.parseJSON(expectedStr);
-        if (expected instanceof JSONArray) {
-            assertNotEquals(message, (JSONArray) expected, actual, compareMode);
-        }
-        else {
-            throw new AssertionError("Expecting a JSON object, but passing in a JSON array");
-        }
+    public static void assertNotEquals(String message, String expectedStr, JSONArray actual, JSONCompareMode compareMode) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -301,9 +268,9 @@ public class JSONAssert {
      * @param strict Enables strict checking
      */
     public static void assertEquals(String expectedStr, String actualStr, boolean strict) {
-        assertEquals(expectedStr, actualStr, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONArray provided matches the expected string.  If it isn't it throws an
      * {@link AssertionError}.
@@ -314,32 +281,32 @@ public class JSONAssert {
      * @param strict Enables strict checking
      */
     public static void assertEquals(String message, String expectedStr, String actualStr, boolean strict) {
-        assertEquals(message, expectedStr, actualStr, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Asserts that the JSONArray provided does not match the expected string.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param expectedStr Expected JSON string
      * @param actualStr String to compare
      * @param strict Enables strict checking
      */
     public static void assertNotEquals(String expectedStr, String actualStr, boolean strict) {
-        assertNotEquals(expectedStr, actualStr, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONArray provided does not match the expected string.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param message Error message to be displayed in case of assertion failure
      * @param expectedStr Expected JSON string
      * @param actualStr String to compare
      * @param strict Enables strict checking
      */
     public static void assertNotEquals(String message, String expectedStr, String actualStr, boolean strict) {
-        assertNotEquals(message, expectedStr, actualStr, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -351,9 +318,9 @@ public class JSONAssert {
      * @param compareMode Specifies which comparison mode to use
      */
     public static void assertEquals(String expectedStr, String actualStr, JSONCompareMode compareMode) {
-        assertEquals("", expectedStr, actualStr, compareMode);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONArray provided matches the expected string.  If it isn't it throws an
      * {@link AssertionError}.
@@ -364,45 +331,32 @@ public class JSONAssert {
      * @param compareMode Specifies which comparison mode to use
      */
     public static void assertEquals(String message, String expectedStr, String actualStr, JSONCompareMode compareMode) {
-        if (expectedStr==actualStr) return;
-        if (expectedStr==null){
-            throw new AssertionError("Expected string is null.");
-        }else if (actualStr==null){
-            throw new AssertionError("Actual string is null.");
-        }
-        JSONCompareResult result = JSONCompare.compareJSON(expectedStr, actualStr, compareMode);
-        if (result.failed()) {
-            throw new AssertionError(getCombinedMessage(message, result.getMessage()));
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Asserts that the JSONArray provided does not match the expected string.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param expectedStr Expected JSON string
      * @param actualStr String to compare
      * @param compareMode Specifies which comparison mode to use
      */
     public static void assertNotEquals(String expectedStr, String actualStr, JSONCompareMode compareMode) {
-        assertNotEquals("", expectedStr, actualStr, compareMode);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONArray provided does not match the expected string.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param message Error message to be displayed in case of assertion failure
      * @param expectedStr Expected JSON string
      * @param actualStr String to compare
      * @param compareMode Specifies which comparison mode to use
      */
-    public static void assertNotEquals(String message, String expectedStr, String actualStr,
-                                       JSONCompareMode compareMode) {
-        JSONCompareResult result = JSONCompare.compareJSON(expectedStr, actualStr, compareMode);
-        if (result.passed()) {
-            throw new AssertionError(getCombinedMessage(message, result.getMessage()));
-        }
+    public static void assertNotEquals(String message, String expectedStr, String actualStr, JSONCompareMode compareMode) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -414,10 +368,9 @@ public class JSONAssert {
      * @param comparator Comparator
      */
     public static void assertEquals(String expectedStr, String actualStr, JSONComparator comparator) {
-        assertEquals("", expectedStr, actualStr, comparator);
-        
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the json string provided matches the expected string.  If it isn't it throws an
      * {@link AssertionError}.
@@ -428,39 +381,32 @@ public class JSONAssert {
      * @param comparator Comparator
      */
     public static void assertEquals(String message, String expectedStr, String actualStr, JSONComparator comparator) {
-        JSONCompareResult result = JSONCompare.compareJSON(expectedStr, actualStr, comparator);
-        if (result.failed()) {
-            throw new AssertionError(getCombinedMessage(message, result.getMessage()));
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Asserts that the json string provided does not match the expected string.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param expectedStr Expected JSON string
      * @param actualStr String to compare
      * @param comparator Comparator
      */
     public static void assertNotEquals(String expectedStr, String actualStr, JSONComparator comparator) {
-        assertNotEquals("", expectedStr, actualStr, comparator);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the json string provided does not match the expected string.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param message Error message to be displayed in case of assertion failure
      * @param expectedStr Expected JSON string
      * @param actualStr String to compare
      * @param comparator Comparator
      */
-    public static void assertNotEquals(String message, String expectedStr, String actualStr,
-                                       JSONComparator comparator) {
-        JSONCompareResult result = JSONCompare.compareJSON(expectedStr, actualStr, comparator);
-        if (result.passed()) {
-            throw new AssertionError(getCombinedMessage(message, result.getMessage()));
-        }
+    public static void assertNotEquals(String message, String expectedStr, String actualStr, JSONComparator comparator) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -472,9 +418,9 @@ public class JSONAssert {
      * @param comparator Comparator
      */
     public static void assertEquals(JSONObject expected, JSONObject actual, JSONComparator comparator) {
-        assertEquals("", expected, actual, comparator);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-   
+
     /**
      * Asserts that the JSONObject provided matches the expected JSONObject.  If it isn't it throws an
      * {@link AssertionError}.
@@ -485,10 +431,7 @@ public class JSONAssert {
      * @param comparator Comparator
      */
     public static void assertEquals(String message, JSONObject expected, JSONObject actual, JSONComparator comparator) {
-        JSONCompareResult result = JSONCompare.compareJSON(expected, actual, comparator);
-        if (result.failed()) {
-            throw new AssertionError(getCombinedMessage(message, result.getMessage()));
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -500,7 +443,7 @@ public class JSONAssert {
      * @param comparator Comparator
      */
     public static void assertNotEquals(JSONObject expected, JSONObject actual, JSONComparator comparator) {
-        assertNotEquals("", expected, actual, comparator);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -512,14 +455,10 @@ public class JSONAssert {
      * @param actual JSONObject to compare
      * @param comparator Comparator
      */
-    public static void assertNotEquals(String message, JSONObject expected, JSONObject actual,
-                                       JSONComparator comparator) {
-        JSONCompareResult result = JSONCompare.compareJSON(expected, actual, comparator);
-        if (result.passed()) {
-            throw new AssertionError(getCombinedMessage(message, result.getMessage()));
-        }
+    public static void assertNotEquals(String message, JSONObject expected, JSONObject actual, JSONComparator comparator) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONObject provided matches the expected JSONObject.  If it isn't it throws an
      * {@link AssertionError}.
@@ -529,9 +468,9 @@ public class JSONAssert {
      * @param strict Enables strict checking
      */
     public static void assertEquals(JSONObject expected, JSONObject actual, boolean strict) {
-        assertEquals(expected, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONObject provided matches the expected JSONObject.  If it isn't it throws an
      * {@link AssertionError}.
@@ -542,32 +481,32 @@ public class JSONAssert {
      * @param strict Enables strict checking
      */
     public static void assertEquals(String message, JSONObject expected, JSONObject actual, boolean strict) {
-        assertEquals(message, expected, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Asserts that the JSONObject provided does not match the expected JSONObject.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param expected Expected JSONObject
      * @param actual JSONObject to compare
      * @param strict Enables strict checking
      */
     public static void assertNotEquals(JSONObject expected, JSONObject actual, boolean strict) {
-        assertNotEquals(expected, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONObject provided does not match the expected JSONObject.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param message Error message to be displayed in case of assertion failure
      * @param expected Expected JSONObject
      * @param actual JSONObject to compare
      * @param strict Enables strict checking
      */
     public static void assertNotEquals(String message, JSONObject expected, JSONObject actual, boolean strict) {
-        assertNotEquals(message, expected, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -579,9 +518,9 @@ public class JSONAssert {
      * @param compareMode Specifies which comparison mode to use
      */
     public static void assertEquals(JSONObject expected, JSONObject actual, JSONCompareMode compareMode) {
-        assertEquals("", expected, actual, compareMode);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONObject provided matches the expected JSONObject.  If it isn't it throws an
      * {@link AssertionError}.
@@ -591,41 +530,33 @@ public class JSONAssert {
      * @param actual JSONObject to compare
      * @param compareMode Specifies which comparison mode to use
      */
-    public static void assertEquals(String message, JSONObject expected, JSONObject actual,
-                                    JSONCompareMode compareMode) {
-        JSONCompareResult result = JSONCompare.compareJSON(expected, actual, compareMode);
-        if (result.failed()) {
-            throw new AssertionError(getCombinedMessage(message, result.getMessage()));
-        }
+    public static void assertEquals(String message, JSONObject expected, JSONObject actual, JSONCompareMode compareMode) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Asserts that the JSONObject provided does not match the expected JSONObject.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param expected Expected JSONObject
      * @param actual JSONObject to compare
      * @param compareMode Specifies which comparison mode to use
      */
     public static void assertNotEquals(JSONObject expected, JSONObject actual, JSONCompareMode compareMode) {
-        assertNotEquals("", expected, actual, compareMode);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONObject provided does not match the expected JSONObject.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param message Error message to be displayed in case of assertion failure
      * @param expected Expected JSONObject
      * @param actual JSONObject to compare
      * @param compareMode Specifies which comparison mode to use
      */
-    public static void assertNotEquals(String message, JSONObject expected, JSONObject actual,
-                                       JSONCompareMode compareMode) {
-        JSONCompareResult result = JSONCompare.compareJSON(expected, actual, compareMode);
-        if (result.passed()) {
-            throw new AssertionError(getCombinedMessage(message, result.getMessage()));
-        }
+    public static void assertNotEquals(String message, JSONObject expected, JSONObject actual, JSONCompareMode compareMode) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -637,9 +568,9 @@ public class JSONAssert {
      * @param strict Enables strict checking
      */
     public static void assertEquals(JSONArray expected, JSONArray actual, boolean strict) {
-        assertEquals("", expected, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONArray provided matches the expected JSONArray.  If it isn't it throws an
      * {@link AssertionError}.
@@ -650,32 +581,32 @@ public class JSONAssert {
      * @param strict Enables strict checking
      */
     public static void assertEquals(String message, JSONArray expected, JSONArray actual, boolean strict) {
-        assertEquals(message, expected, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Asserts that the JSONArray provided does not match the expected JSONArray.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param expected Expected JSONArray
      * @param actual JSONArray to compare
      * @param strict Enables strict checking
      */
     public static void assertNotEquals(JSONArray expected, JSONArray actual, boolean strict) {
-        assertNotEquals(expected, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONArray provided does not match the expected JSONArray.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param message Error message to be displayed in case of assertion failure
      * @param expected Expected JSONArray
      * @param actual JSONArray to compare
      * @param strict Enables strict checking
      */
     public static void assertNotEquals(String message, JSONArray expected, JSONArray actual, boolean strict) {
-        assertNotEquals(message, expected, actual, strict ? JSONCompareMode.STRICT : JSONCompareMode.LENIENT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -687,9 +618,9 @@ public class JSONAssert {
      * @param compareMode Specifies which comparison mode to use
      */
     public static void assertEquals(JSONArray expected, JSONArray actual, JSONCompareMode compareMode) {
-        assertEquals("", expected, actual, compareMode);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONArray provided matches the expected JSONArray.  If it isn't it throws an
      * {@link AssertionError}.
@@ -700,45 +631,37 @@ public class JSONAssert {
      * @param compareMode Specifies which comparison mode to use
      */
     public static void assertEquals(String message, JSONArray expected, JSONArray actual, JSONCompareMode compareMode) {
-        JSONCompareResult result = JSONCompare.compareJSON(expected, actual, compareMode);
-        if (result.failed()) {
-            throw new AssertionError(getCombinedMessage(message, result.getMessage()));
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Asserts that the JSONArray provided does not match the expected JSONArray.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param expected Expected JSONArray
      * @param actual JSONArray to compare
      * @param compareMode Specifies which comparison mode to use
      */
     public static void assertNotEquals(JSONArray expected, JSONArray actual, JSONCompareMode compareMode) {
-        assertNotEquals("", expected, actual, compareMode);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Asserts that the JSONArray provided does not match the expected JSONArray.  If it is it throws an
      * {@link AssertionError}.
-     * 
+     *
      * @param message Error message to be displayed in case of assertion failure
      * @param expected Expected JSONArray
      * @param actual JSONArray to compare
      * @param compareMode Specifies which comparison mode to use
      */
-    public static void assertNotEquals(String message, JSONArray expected, JSONArray actual,
-                                       JSONCompareMode compareMode) {
-        JSONCompareResult result = JSONCompare.compareJSON(expected, actual, compareMode);
-        if (result.passed()) {
-            throw new AssertionError(getCombinedMessage(message, result.getMessage()));
-        }
+    public static void assertNotEquals(String message, JSONArray expected, JSONArray actual, JSONCompareMode compareMode) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     private static String getCombinedMessage(String message1, String message2) {
         String combinedMessage = "";
-        
-        if(message1 == null || "".equals(message1)) {
+        if (message1 == null || "".equals(message1)) {
             combinedMessage = message2;
         } else {
             combinedMessage = message1 + " " + message2;

@@ -11,7 +11,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-
 package org.skyscreamer.jsonassert;
 
 import org.json.JSONArray;
@@ -26,6 +25,7 @@ import org.skyscreamer.jsonassert.comparator.JSONComparator;
  * non-JUnit test framework)
  */
 public final class JSONCompare {
+
     private JSONCompare() {
     }
 
@@ -43,26 +43,10 @@ public final class JSONCompare {
      * @throws IllegalArgumentException when type of expectedStr doesn't match the type of actualStr
      */
     public static JSONCompareResult compareJSON(String expectedStr, String actualStr, JSONComparator comparator) {
-        Object expected = JSONParser.parseJSON(expectedStr);
-        Object actual = JSONParser.parseJSON(actualStr);
-        if ((expected instanceof JSONObject) && (actual instanceof JSONObject)) {
-            return compareJSON((JSONObject) expected, (JSONObject) actual, comparator);
-        }
-        else if ((expected instanceof JSONArray) && (actual instanceof JSONArray)) {
-            return compareJSON((JSONArray)expected, (JSONArray)actual, comparator);
-        }
-        else if (expected instanceof JSONString && actual instanceof JSONString) {
-            return compareJson((JSONString) expected, (JSONString) actual);
-        }
-        else if (expected instanceof JSONObject) {
-            return new JSONCompareResult().fail("", expected, actual);
-        }
-        else {
-            return new JSONCompareResult().fail("", expected, actual);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-  /**
+    /**
      * Compares JSON object provided to the expected JSON object using provided comparator, and returns the results of
      * the comparison.
      * @param expected expected json object
@@ -71,7 +55,7 @@ public final class JSONCompare {
      * @return result of the comparison
      */
     public static JSONCompareResult compareJSON(JSONObject expected, JSONObject actual, JSONComparator comparator) {
-        return comparator.compareJSON(expected, actual);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -83,7 +67,7 @@ public final class JSONCompare {
      * @return result of the comparison
      */
     public static JSONCompareResult compareJSON(JSONArray expected, JSONArray actual, JSONComparator comparator) {
-        return comparator.compareJSON(expected, actual);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -95,13 +79,7 @@ public final class JSONCompare {
      * @return result of the comparison
      */
     public static JSONCompareResult compareJson(final JSONString expected, final JSONString actual) {
-        final JSONCompareResult result = new JSONCompareResult();
-        final String expectedJson = expected.toJSONString();
-        final String actualJson = actual.toJSONString();
-        if (!expectedJson.equals(actualJson)) {
-          result.fail("");
-        }
-        return result;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -113,7 +91,7 @@ public final class JSONCompare {
      * @return result of the comparison
      */
     public static JSONCompareResult compareJSON(String expectedStr, String actualStr, JSONCompareMode mode) {
-        return compareJSON(expectedStr, actualStr, getComparatorForMode(mode));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -125,9 +103,8 @@ public final class JSONCompare {
      * @return result of the comparison
      */
     public static JSONCompareResult compareJSON(JSONObject expected, JSONObject actual, JSONCompareMode mode) {
-        return compareJSON(expected, actual, getComparatorForMode(mode));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 
     /**
      * Compares JSONArray provided to the expected JSONArray, and returns the results of the comparison.
@@ -138,7 +115,6 @@ public final class JSONCompare {
      * @return result of the comparison
      */
     public static JSONCompareResult compareJSON(JSONArray expected, JSONArray actual, JSONCompareMode mode) {
-        return compareJSON(expected, actual, getComparatorForMode(mode));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }
